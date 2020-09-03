@@ -1,2 +1,5 @@
 Django==2.2.13
+django-crispy-forms==1.9.2
+Pillow==7.2.0
 pytz==2018.9
+sqlparse==0.3.1
