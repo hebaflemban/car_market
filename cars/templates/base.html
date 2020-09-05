@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+{% load static %}
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -7,6 +9,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'custom.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
 
     <title>
       {% block title %}
@@ -16,35 +21,41 @@
     </title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="{% url 'home' %}">سابق و لاحق</a>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-transparent">
+      <a class="navbar-brand text-light" href="{% url 'home' %}"> <i  style = "color:#f0ad4e;"class="fas fa-car-crash red-"></i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'car-list' %}">Show'em <span class="sr-only">(current)</span></a>
+            <a class="nav-link text-warning" href="{% url 'car-list' %}">Show'em <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'car-create' %}">Add </a>
+            <a class="nav-link text-warning" href="{% url 'car-create' %}">Add </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Just aarived!</a>
+            <a class="nav-link disabled text-secondary " href="#" tabindex="-1" aria-disabled="true">Just arived!</a>
+          </li>
+          <li class="nav-item d-flex">
+            <div class="collapse fade amber-text" id="searchForm">
+              <input id="search" type="search" class="form-control border-0 bg-light" placeholder="search" />
+            </div>
+            <a class="nav-link ml-auto" href="#searchForm" data-target="#searchForm" data-toggle="collapse">
+              <i class="mdi mdi-magnify red-text"></i>
+            </a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+
+
       </div>
+
     </nav>
     {% block content %}
 
     {% endblock content %}
-
-    <!-- Optional JavaScript -->
+    <!-- Optional JavaScript     <div class = 'container mt-3'>-->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

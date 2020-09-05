@@ -7,33 +7,34 @@
 
 {% block content %}
 
-<!-- mama jumbotron -->
+<div class = 'container'
+	<!-- mama jumbotron -->
 
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
+	<div class="jumbotron jumbotron-fluid mt-5">
+	  <div class="container">
 
-		<!-- 1st kid jumbotron for pics -->
-		<div class="jumbotron jumbotron-fluid">
-		  <div class="container">
-				{%if car.img %}
-				<img src="{{car.img.url}}"  alt="...">
-				{% endif %}
-		  </div>
-		</div>
+			<!-- 1st kid jumbotron for pics -->
+			<div class="jumbotron jumbotron-fluid">
+			  <div class="container">
+					{%if car.img %}
+					<img class="d-block mx-auto img-responsive "  src="{{car.img.url}}"  alt="...">
+					{% endif %}
+			  </div>
+			</div>
 
-		<!-- 2nd kid jumbotron for description -->
-		<div class="jumbotron">
-			<h1 class="display-4">{{car.make}} - {{car.model}}</h1>
-			<p class="lead">{{car.year}}</p>
-			<hr class="my-4">
-			<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-			<a class="btn btn-primary btn-lg" href="{% url 'car-update' car.id %}" role="button">Edit</a>
-			<a class="btn btn-primary btn-lg" href="{% url 'car-delete' car.id %}" role="button">Sold!</a>
+			<!-- 2nd kid jumbotron for description -->
+			<div class="jumbotron">
+				<h1 class="display-4">{{car.make}} - {{car.model}}</h1>
+				<p class="lead">{{car.year}}</p>
+				<hr class="my-4">
+				<p>{{car.description}}</p>
+				<a class="btn btn-primary btn-lg" href="{% url 'car-update' car.id %}" role="button">Edit</a>
+				<a class="btn btn-primary btn-lg" href="{% url 'car-delete' car.id %}" role="button">Sold!</a>
 
-		</div>
+			</div>
 
 
-  </div>
+	  </div>
+	</div>
 </div>
-
 {% endblock content %}

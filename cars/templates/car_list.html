@@ -6,24 +6,24 @@
 {% endblock title %}
 
 {% block content %}
-<div class="row row-cols-1 row-cols-md-2">
+	<div class="row row-cols-1 row-cols-md-2 m-5">
 
-	{% for car in cars %}
+		{% for car in cars %}
 
-		<div class="col mb-4">
-			<div class="card">
-				<a href="{% url 'car-detail' car.id %}">
-				{%if car.img %}
-					<img src="{{car.img.url}}" class="card-img-top" alt="..."></a>
-				{% endif %}
-				<div class="card-body">
-					<h5 class="card-title">{{car.make}} - {{car.model}}</h5>
-					<p class="card-text">{{car.year}}</p>
+			<div class="col mb-4">
+				<div class="card">
+					<a href="{% url 'car-detail' car.id %}">
+					{%if car.img %}
+						<img src="{{car.img.url}}" class="card-img-top"  alt="..."></a>
+					{% endif %}
+					<div class="card-body hover">
+						<h5 class="card-title">{{car.make}} - {{car.model}}</h5>
+						<p class="card-text">{{car.year}}</p>
+					</div>
 				</div>
 			</div>
-		</div>
 
-	{% endfor %}
+		{% endfor %}
 
-</div>
+	</div>
 {% endblock content %}

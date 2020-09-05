@@ -5,6 +5,7 @@ class Car(models.Model):
 	make = models.CharField(max_length=120)
 	model = models.CharField(max_length=120)
 	year = models.IntegerField()
+	description = models.TextField(null=True, blank=True)
 	img = models.ImageField(null=True, blank=True)
 
 	def __str__(self):

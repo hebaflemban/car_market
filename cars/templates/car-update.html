@@ -7,8 +7,8 @@
 
 {% block content %}
 
-<div class="card">
-  <h5 class="card-header">Update: {{car_obj.name}}</h5>
+<div class="card mt-5">
+  <h5 class="card-header">Update: {{car_obj.model}}</h5>
   <div class="card-body">
     <p class="card-text">
         <form action="{% url 'car-update' car_obj.id %}" method="POST" enctype="multipart/form-data">

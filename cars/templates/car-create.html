@@ -6,19 +6,19 @@
 {% endblock title %}
 
 {% block content %}
-
-<div class="card">
-  <h5 class="card-header">Add a new car</h5>
-    <div class="card-body">
-      <p class="card-text">
-          <form action="{% url 'car-create' %}" method="POST" enctype="multipart/form-data">
-              {% csrf_token %}
-              {{form|crispy}}
-              <input type="submit" value="Add" class="btn btn-outline-success">
-          </form>
-      </p>
-    </div>
-</div>
-
+	<div class='container m-5'
+		<div class="card ">
+		  <h5 class="card-header">Add a new car</h5>
+		    <div class="card-body">
+		      <p class="card-text">
+		          <form action="{% url 'car-create' %}" method="POST" enctype="multipart/form-data">
+		              {% csrf_token %}
+		              {{form|crispy}}
+		              <input type="submit" value="Add" class="btn btn-outline-success">
+		          </form>
+		      </p>
+		    </div>
+		</div>
+	</div>
 
 {% endblock content %}
